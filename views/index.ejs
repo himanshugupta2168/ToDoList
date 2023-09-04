@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=title%></title>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <link rel="stylesheet" href="/Assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 
 </head>
 <body>
     <div class="wrapper">
       <div class="main">
         <h1><%= heading %></h1>
-        <div>
-          <ul>
+        <div class="task-container ">
+          <ul class="list">
             <%for (let i of Tasks){%>
-            <li>
-              <div>
-                <input type="checkbox" name="" id="" />
+            <li class="list-item ">
+              <div class="item-flex">
+                <input type="checkbox" name="" id="checkbox" />
                 <p><%= i.work%></p>
                 <button type="delete">
                   <span class="iconify" data-icon="mdi:cancel-outline"></span>
@@ -28,11 +28,11 @@
           </ul>
         </div>
         <form action="/add" method="post">
-          <input type="text" placeholder="task" name="work" required/>
-          <button type="submit">Add Task</button>
+          <input type="text" placeholder="Enter task to add to To do List ..." name="work" required/>
+          <button type="submit"><span class="iconify send" data-icon="ph:plus-fill"></span></button>
         </form>
       </div>
     </div>
-    <script src="../Assets/javascript/home.js" type="text/script"></script>
+    <script src="/javascript/home.js"></script>
   </body>
 </html>

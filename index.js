@@ -1,9 +1,11 @@
 const express = require('express');
+const ejs= require('ejs');
 const port = 8000;
 const path = require('path');
 const app = express();
 
 app.set('view engine', 'ejs');
+app.use(express.static("Assets"));
 app.set('views' ,path.join(__dirname, 'views'))
 app.use(express.urlencoded())
 
@@ -11,9 +13,9 @@ app.use(express.urlencoded())
 var tasks=[]
 
 app.get('/',(req, res) =>{
-    return res.render('index',{
+    res.render('index',{
         title:"To Do List ",
-        heading:"Welcome to To Do List ",
+        heading:"To do app ",
         Tasks: tasks,
     } )
 })
