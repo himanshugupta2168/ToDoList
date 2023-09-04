@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="/Assets/css/style.css" type="text/css">
+
+</head>
+<body>
+    <div class="wrapper">
+      <div class="main">
+        <h1><%= heading %></h1>
+        <div>
+          <ul>
+            <%for (let i of Tasks){%>
+            <li>
+              <div>
+                <input type="checkbox" name="" id="" />
+                <p><%= i.work%></p>
+                <button type="delete">
+                  <span class="iconify" data-icon="mdi:cancel-outline"></span>
+                </button>
+              </div>
+            </li>
+            <%}%>
+          </ul>
+        </div>
+        <form action="/add" method="post">
+          <input type="text" placeholder="task" name="work" required/>
+          <button type="submit">Add Task</button>
+        </form>
+      </div>
+    </div>
+    <script src="../Assets/javascript/home.js" type="text/script"></script>
+  </body>
+</html>
