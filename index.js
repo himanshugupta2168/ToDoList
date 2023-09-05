@@ -21,8 +21,28 @@ app.get('/',(req, res) =>{
 })
 app.post('/add', (req, res)=>{
     tasks.push(req.body);
-    return res.redirect('back');
+    return res.redirect('/');
 
+})
+// this is the example of the string param which is used to delete the content 
+// app.get('/delete/:work',(req, res)=>{
+//     console.log(req.params);
+
+// })
+// this id the example of the string param which is used to delete the content 
+app.get('/delete/', (req, res)=>{
+    // console.log(req.query);
+    console.log(req.query.work)
+    let DeleteWork = req.query.work;
+    DeleteWork= decodeURIComponent(DeleteWork);
+    console.log(DeleteWork)
+
+    let workIndex = tasks.findIndex(e=> e.work== DeleteWork);
+
+    if (workIndex!=-1){
+        tasks.splice(workIndex,1);
+    }
+    return res.redirect('back');
 })
 
 

@@ -19,9 +19,7 @@
               <div class="item-flex">
                 <input type="checkbox" name="" id="checkbox" />
                 <p><%= i.work%></p>
-                <button type="delete">
-                  <span class="iconify" data-icon="mdi:cancel-outline"></span>
-                </button>
+                <a href="/delete/?work=<%= i.work %>" class="delete"><span class="iconify" data-icon="mdi:cancel-outline"></span></a>
               </div>
             </li>
             <%}%>
