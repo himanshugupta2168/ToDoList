@@ -7,8 +7,8 @@ const dbConnect = ()=>{
     useNewUrlParser:true,
     useUnifiedTopology: true,
 
-  }).
-  then(()=> console.log("DB Connection successful ho gya "))
+  })
+  .then(()=> console.log("DB Connection successful ho gya "))
   .catch((err)=> {console.log("Nhi connect ho pa rha db se ", err);
     process.exit(1);
   })
